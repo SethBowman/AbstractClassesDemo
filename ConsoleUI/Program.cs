@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,10 +40,38 @@ namespace ConsoleUI
              * Set the properties with object initializer syntax
              */
 
+            var sedan = new Car();
+            sedan.Make = "Ford";
+            sedan.Model = "Fusion";
+            sedan.Year = "2021";
+            sedan.HasTrunk = true;
+
+            var harley = new Motorcycle();
+            harley.Make = "Harley";
+            harley.Model = "Big";
+            harley.Year = "2019";
+            harley.HasSideCart = false;
+
+            Vehicle toyota = new Car();
+            toyota.Make = "Toyota";
+            toyota.Model = "Camry";
+            toyota.Year = "2011";
+            
+            Vehicle porshe = new Car();
+            porshe.Make = "Porshe";
+            porshe.Model = "911";
+            porshe.Year = "2015";
+
+            var vehicles = new List<Vehicle>() {porshe, toyota, harley, sedan};
+
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
              */
+            foreach(var ride in vehicles)
+            {
+                Console.WriteLine($"Make: {ride.Make}\nModel: {ride.Model}\nYear: {ride.Year}\n");
+            }
 
             // Call each of the drive methods for one car and one motorcycle
 
